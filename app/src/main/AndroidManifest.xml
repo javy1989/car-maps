@@ -43,7 +43,7 @@
         <activity
             android:name=".VendedorMapActivity"
             android:label="@string/title_activity_vendedor_map" />
-        <activity android:name=".MapActivity"></activity>
+        <activity android:name=".ClienteMapActivity"></activity>
     </application>
 
 </manifest>
