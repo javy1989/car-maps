@@ -7,28 +7,33 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    Button mVendedor,mCliente;
+
+    Button mDriver,mCustomer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mVendedor=(Button)findViewById(R.id.vendedor);
-        mCliente=(Button)findViewById(R.id.cliente);
+        mDriver=(Button)findViewById(R.id.driver);
+        mCustomer=(Button)findViewById(R.id.customer);
+
+        mDriver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent(MainActivity.this, DriverLoginActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        mCustomer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent(MainActivity.this, CustomerLoginActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
-    public void llamaLoginVendedor(View view){
-        Intent intent=new Intent(MainActivity.this,VendedorLoginActivity.class);
-        startActivity(intent);
-        finish();
-        return;
-    }
-
-    public void llamaLoginComprador(View view){
-        Intent intent=new Intent(MainActivity.this,ClienteLoginActivity.class);
-        startActivity(intent);
-        finish();
-        return;
-
-    }
 }
