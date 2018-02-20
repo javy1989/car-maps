@@ -34,7 +34,7 @@ public class CustomerLoginActivity extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 if (user != null) {
-                    Intent intent = new Intent(CustomerLoginActivity.this,MapActivity.class);
+                    Intent intent = new Intent(CustomerLoginActivity.this,CustomerMapActivity.class);
                     startActivity(intent);
                     finish();
                     return;
@@ -59,7 +59,7 @@ public class CustomerLoginActivity extends AppCompatActivity {
                             Toast.makeText(CustomerLoginActivity.this, "sing up error", Toast.LENGTH_SHORT).show();
                         } else {
                             String userId = mAuth.getCurrentUser().getUid();
-                            DatabaseReference currentUserdb = FirebaseDatabase.getInstance().getReference().child("Users").child("Drivers").child(userId);
+                            DatabaseReference currentUserdb = FirebaseDatabase.getInstance().getReference().child("Users").child("Customers").child(userId);
                             currentUserdb.setValue(true);
                         }
                     }
@@ -79,7 +79,7 @@ public class CustomerLoginActivity extends AppCompatActivity {
                             Toast.makeText(CustomerLoginActivity.this, "sing in error", Toast.LENGTH_SHORT).show();
                         }else{
                             String userId = mAuth.getCurrentUser().getUid();
-                            DatabaseReference currentUserdb = FirebaseDatabase.getInstance().getReference().child("Users").child("Drivers").child(userId);
+                            DatabaseReference currentUserdb = FirebaseDatabase.getInstance().getReference().child("Users").child("Customers").child(userId);
                             currentUserdb.setValue(true);
                         }
                     }
