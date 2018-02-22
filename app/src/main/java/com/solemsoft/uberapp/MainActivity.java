@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         mDriver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                System.out.println("me diste click driver");
                 Intent intent =new Intent(MainActivity.this, DriverLoginActivity.class);
                 startActivity(intent);
                 finish();
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         mCustomer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                System.out.println("me diste click driver");
                 Intent intent =new Intent(MainActivity.this, CustomerLoginActivity.class);
                 startActivity(intent);
                 finish();
