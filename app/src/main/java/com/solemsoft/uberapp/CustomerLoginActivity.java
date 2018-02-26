@@ -59,8 +59,8 @@ public class CustomerLoginActivity extends AppCompatActivity {
                             Toast.makeText(CustomerLoginActivity.this, "sing up error", Toast.LENGTH_SHORT).show();
                         } else {
                             String userId = mAuth.getCurrentUser().getUid();
-                            DatabaseReference currentUserdb = FirebaseDatabase.getInstance().getReference().child("Users").child("Customers").child(userId);
-                            currentUserdb.setValue(true);
+                            DatabaseReference currentUserdb = FirebaseDatabase.getInstance().getReference().child("Users").child("Customers").child(userId).child("name");
+                            currentUserdb.setValue(email);
                         }
                     }
                 });
@@ -77,10 +77,6 @@ public class CustomerLoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (!task.isSuccessful()){
                             Toast.makeText(CustomerLoginActivity.this, "sing in error", Toast.LENGTH_SHORT).show();
-                        }else{
-                            String userId = mAuth.getCurrentUser().getUid();
-                            DatabaseReference currentUserdb = FirebaseDatabase.getInstance().getReference().child("Users").child("Customers").child(userId);
-                            currentUserdb.setValue(true);
                         }
                     }
                 });

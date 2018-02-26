@@ -63,8 +63,8 @@ public class DriverLoginActivity extends AppCompatActivity {
                             Toast.makeText(DriverLoginActivity.this, "sing up error", Toast.LENGTH_SHORT).show();
                         } else {
                             String userId = mAuth.getCurrentUser().getUid();
-                            DatabaseReference currentUserdb = FirebaseDatabase.getInstance().getReference().child("Users").child("Drivers").child(userId);
-                            currentUserdb.setValue(true);
+                            DatabaseReference currentUserdb = FirebaseDatabase.getInstance().getReference().child("Users").child("Drivers").child(userId).child("name");
+                            currentUserdb.setValue(email);
                         }
                     }
                 });
@@ -81,10 +81,6 @@ public class DriverLoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (!task.isSuccessful()){
                             Toast.makeText(DriverLoginActivity.this, "sing in error", Toast.LENGTH_SHORT).show();
-                        }else{
-                            String userId = mAuth.getCurrentUser().getUid();
-                            DatabaseReference currentUserdb = FirebaseDatabase.getInstance().getReference().child("Users").child("Drivers").child(userId);
-                            currentUserdb.setValue(true);
                         }
                     }
                 });
