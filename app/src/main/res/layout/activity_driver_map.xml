@@ -4,17 +4,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.solemsoft.uberapp.DriverMapActivity">
+
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/logout"
-        android:text="logout"/>
-    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="logout" />
+
+    <Button
         android:id="@+id/settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="right"
-        android:text="settings"/>
+        android:text="settings" />
 
     <fragment
         android:id="@+id/map"
@@ -24,45 +26,57 @@
         tools:context="com.solemsoft.uberapp.DriverMapActivity" />
 
     <LinearLayout
+        android:id="@+id/customerInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/customerInfo"
         android:layout_gravity="bottom"
-        android:orientation="horizontal"
         android:background="@android:color/white"
-        android:visibility="gone">
-        <ImageView
-            android:layout_width="100sp"
-            android:layout_height="100sp"
-            android:id="@+id/customerProfileImage"
-            android:src="@mipmap/ic_defualt_user"
-            android:padding="20sp"/>
+        android:orientation="vertical"
+        android:visibility="visible">
+
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingLeft="40sp">
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/customerProfileImage"
+                android:layout_width="100sp"
+                android:layout_height="100sp"
+                android:padding="20sp"
+                android:src="@mipmap/ic_defualt_user" />
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/customerDestination"
-                android:paddingBottom="10sp"
-                android:text="Destinatiion: ---"/>
+                android:orientation="vertical"
+                android:paddingLeft="40sp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/customerName"
-                android:paddingBottom="10sp"
-                android:paddingTop="20sp"/>
+                <TextView
+                    android:id="@+id/customerDestination"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10sp"
+                    android:text="Destinatiion: ---" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/customerPhone"
-                android:paddingBottom="10sp"
-                android:paddingTop="20sp"/>
+                <TextView
+                    android:id="@+id/customerName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10sp"
+                    android:paddingTop="20sp" />
+
+                <TextView
+                    android:id="@+id/customerPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10sp"
+                    android:paddingTop="20sp" />
+            </LinearLayout>
         </LinearLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="picked customer"
+            android:id="@+id/rideStatus"/>
     </LinearLayout>
 </FrameLayout>
