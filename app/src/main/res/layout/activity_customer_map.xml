@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient"
     tools:context="com.solemsoft.uberapp.CustomerLoginActivity">
 
     <fragment
@@ -23,6 +24,8 @@
                 android:id="@+id/logout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                style="@style/button_style"
+                android:drawableLeft="@mipmap/ic_exit"
                 android:text="logout" />
 
             <Button
@@ -32,16 +35,10 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_gravity="right"
+                android:drawableLeft="@mipmap/ic_settings"
+                style="@style/button_style"
                 android:text="settings" />
 
-            <Button
-                android:id="@+id/history"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_gravity="right"
-                android:text="history" />
 
         </LinearLayout>
 
@@ -63,14 +60,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        >
 
         <LinearLayout
             android:id="@+id/driverInfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:background="@android:color/white"
+            android:background="@drawable/gradient"
             android:orientation="horizontal"
             android:visibility="gone">
 
@@ -92,6 +90,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingBottom="10sp"
+                    style="@style/editText_style"
                     android:paddingTop="20sp" />
 
                 <TextView
@@ -99,6 +98,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingBottom="10sp"
+                    style="@style/editText_style"
                     android:paddingTop="20sp" />
 
                 <TextView
@@ -106,6 +106,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingBottom="10sp"
+                    style="@style/editText_style"
                     android:paddingTop="20sp" />
             </LinearLayout>
         </LinearLayout>
@@ -147,7 +148,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
-                android:text="Call Uber" />
+                android:text="Call Uber"
+                android:drawableLeft="@mipmap/ic_call_taxi"
+                style="@style/button_style"/>
         </LinearLayout>
 
     </LinearLayout>

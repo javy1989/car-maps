@@ -5,27 +5,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/gradient"
     tools:context="com.solemsoft.uberapp.CustomerLoginActivity">
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="email"
+        style="@style/editText_style"
         android:id="@+id/email"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="password"
+        style="@style/editText_style"
         android:id="@+id/password"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login"
+        android:text="Ingresar"
+        android:drawableLeft="@mipmap/ic_login"
+        style="@style/button_style"
         android:id="@+id/login"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Registration"
+        android:text="Registrarse"
+        android:drawableLeft="@mipmap/ic_register"
+        style="@style/button_style"
         android:id="@+id/registration"/>
 </LinearLayout>

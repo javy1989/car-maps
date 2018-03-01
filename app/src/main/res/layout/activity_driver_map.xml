@@ -3,12 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient"
     tools:context="com.solemsoft.uberapp.DriverMapActivity">
 
     <Button
         android:id="@+id/logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        style="@style/button_style"
+        android:drawableLeft="@mipmap/ic_exit"
         android:text="logout" />
 
     <Button
@@ -16,6 +19,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="right"
+        android:drawableLeft="@mipmap/ic_settings"
+        style="@style/button_style"
         android:text="settings" />
 
     <fragment
@@ -37,7 +42,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="@drawable/gradient">
             <ImageView
                 android:id="@+id/customerProfileImage"
                 android:layout_width="100sp"
@@ -56,6 +62,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingBottom="10sp"
+                    style="@style/editText_style"
                     android:text="Destinatiion: ---" />
 
                 <TextView
@@ -63,6 +70,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingBottom="10sp"
+                    style="@style/editText_style"
                     android:paddingTop="20sp" />
 
                 <TextView
@@ -70,6 +78,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingBottom="10sp"
+                    style="@style/editText_style"
                     android:paddingTop="20sp" />
             </LinearLayout>
         </LinearLayout>
@@ -77,6 +86,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="picked customer"
+            style="@style/button_style"
             android:id="@+id/rideStatus"/>
     </LinearLayout>
 </FrameLayout>

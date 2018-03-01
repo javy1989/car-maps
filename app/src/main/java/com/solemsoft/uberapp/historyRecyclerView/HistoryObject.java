@@ -7,7 +7,7 @@ package com.solemsoft.uberapp.historyRecyclerView;
 public class HistoryObject {
     private String rideId;
 
-    private HistoryObject(String rideId){
+    public HistoryObject(String rideId){
         this.rideId=rideId;
     }
 

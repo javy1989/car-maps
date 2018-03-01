@@ -28,6 +28,7 @@ import com.firebase.geofire.GeoQueryEventListener;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.Status;
+import com.google.android.gms.internal.in;
 import com.google.android.gms.location.Geofence;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
@@ -170,6 +171,7 @@ public class CustomerMapActivity extends FragmentActivity implements OnMapReadyC
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(CustomerMapActivity.this, HistoryActivity.class);
+                intent.putExtra("customerOrDriver","Customers");
                 startActivity(intent);
                 return;
             }
