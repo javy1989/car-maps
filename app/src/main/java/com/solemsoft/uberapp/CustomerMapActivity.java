@@ -62,7 +62,7 @@ public class CustomerMapActivity extends FragmentActivity implements OnMapReadyC
     Location mLastLocation;
     LocationRequest mLocationRequest;
 
-    private Button mLogout, mRequest, mSettings,mHistory;
+    private Button mLogout, mRequest, mSettings;
     private LatLng pickUpLocation;
 
 
@@ -106,7 +106,7 @@ public class CustomerMapActivity extends FragmentActivity implements OnMapReadyC
         mLogout = findViewById(R.id.logout);
         mRequest =  findViewById(R.id.request);
         mSettings =  findViewById(R.id.settings);
-        mHistory=findViewById(R.id.history);
+
 
         mLogout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -167,15 +167,7 @@ public class CustomerMapActivity extends FragmentActivity implements OnMapReadyC
             }
         });
 
-        mHistory.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(CustomerMapActivity.this, HistoryActivity.class);
-                intent.putExtra("customerOrDriver","Customers");
-                startActivity(intent);
-                return;
-            }
-        });
+
         PlaceAutocompleteFragment autocompleteFragment = (PlaceAutocompleteFragment)
                 getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment);
 
